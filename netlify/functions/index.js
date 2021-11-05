@@ -18,12 +18,7 @@ const read = function (dir) {
 exports.handler = async (event) => {
   const subject = event.queryStringParameters.name || "World";
   console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  try {
-    const files = await read(d);
-    for (const file of files) console.log(file);
-  } catch (err) {
-    console.error(err);
-  }
+  const files = await read(d);
   return {
     statusCode: 200,
     body: `Hello ${subject}!`,
