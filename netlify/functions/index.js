@@ -4,13 +4,14 @@ const sites = require("./sites.json");
 
 exports.handler = async (event) => {
   const subject = event.queryStringParameters.name || "World";
+  console.log("coooooooooool", sites);
   let res = "";
   try {
     const req = await new Promise((resolve, reject) => {
       https
         .get(
           `https://quirky-northcutt-01be8c.netlify.app/${
-            items[Math.floor(Math.random() * items.length)]
+            sites[Math.floor(Math.random() * items.length)]
           }`,
           (resp) => {
             let data = "";
