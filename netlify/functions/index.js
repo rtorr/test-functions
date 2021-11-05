@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const d = "./dist";
+const d = "./";
 
 const read = function (dir) {
   return new Promise((resolve, reject) => {
