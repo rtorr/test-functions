@@ -4,4 +4,4 @@
   status = 200
 
 [functions]
-  included_files = ["sites/**"]
+  node_bundler = "esbuild"
