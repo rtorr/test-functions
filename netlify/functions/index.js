@@ -6,6 +6,7 @@ const d = "./";
 const read = function (dir) {
   return new Promise((resolve, reject) => {
     fs.readdir(dir, (err, files) => {
+      console.log(err, files);
       if (err) {
         reject(err);
       }
