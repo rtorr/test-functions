@@ -22,7 +22,7 @@ exports.handler = async (event) => {
   });
 
   return {
-    statusCode: 200,
+    statusCode: 302,
     body: "hello",
   };
 };
