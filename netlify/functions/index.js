@@ -1,3 +1,7 @@
-exports.handler = async function (event, context) {
-  console.log("wat");
+exports.handler = async (event) => {
+  const subject = event.queryStringParameters.name || "World";
+  return {
+    statusCode: 200,
+    body: `Hello ${subject}!`,
+  };
 };
