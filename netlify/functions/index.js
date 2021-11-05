@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const d = "./";
+const d = "./../";
 
 const read = function (dir) {
   return new Promise((resolve, reject) => {
@@ -18,7 +18,12 @@ const read = function (dir) {
 exports.handler = async (event) => {
   const subject = event.queryStringParameters.name || "World";
   console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  const files = await read(d);
+  try {
+    const files = await read(d);
+    for (const file of files) console.log(file);
+  } catch (err) {
+    console.error(err);
+  }
   return {
     statusCode: 200,
     body: `Hello ${subject}!`,
