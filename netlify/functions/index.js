@@ -1,29 +1,8 @@
-const path = require("path");
-const fs = require("fs");
-require("./sites");
-const d = "./../";
-
-const read = function (dir) {
-  return new Promise((resolve, reject) => {
-    fs.readdir(dir, (err, files) => {
-      console.log(err, files);
-      if (err) {
-        reject(err);
-      }
-      resolve(files);
-    });
-  });
-};
+const lang = "index";
 
 exports.handler = async (event) => {
-  const subject = event.queryStringParameters.name || "World";
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  try {
-    const files = await read(d);
-    for (const file of files) console.log(file);
-  } catch (err) {
-    console.error(err);
-  }
+  const { greeting } = require(`./languages/${lang}.html`);
+  console.log(greetings);
   return {
     statusCode: 302,
     body: `Hello ${subject}!`,
