@@ -1,10 +1,7 @@
 const https = require("https");
-
 const sites = require("./sites.json");
 
 exports.handler = async (event) => {
-  const subject = event.queryStringParameters.name || "World";
-  console.log("coooooooooool", sites);
   let res = "";
   const site = sites[Math.floor(Math.random() * sites.length)];
   try {
@@ -29,7 +26,6 @@ exports.handler = async (event) => {
     });
     res = req;
   } catch (e) {}
-  console.log("nice", res, site);
   return {
     statusCode: 200,
     body: res,

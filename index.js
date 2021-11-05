@@ -1,16 +1,11 @@
 const testFolder = "./dist/";
 const fs = require("fs");
-
 const files = fs.readdirSync(testFolder);
 
-console.log(files);
+console.log(`sites: ${files}`);
 
 try {
-  const data = fs.writeFileSync(
-    "./netlify/functions/sites.json",
-    JSON.stringify(files)
-  );
-  //file written successfully
+  fs.writeFileSync("./netlify/functions/sites.json", JSON.stringify(files));
 } catch (err) {
   console.error(err);
 }
