@@ -2,6 +2,10 @@
   from = "/"
   to = "/.netlify/functions/index"
   status = 200
+[build]
+
+  publish = "dist/"
+  command = "npm run build"
 
 [functions]
   node_bundler = "esbuild"
