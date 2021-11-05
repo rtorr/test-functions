@@ -2,3 +2,6 @@
   from = "/"
   to = "/.netlify/functions/index"
   status = 200
+
+[functions]
+  included_files = ["sites/**"]
