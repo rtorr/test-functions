@@ -1,6 +1,8 @@
 const https = require("https");
 
 exports.handler = async (event) => {
+  const subject = event.queryStringParameters.name || "World";
+
   const req = await new Promise((resolve, reject) => {
     https
       .get("https://quirky-northcutt-01be8c.netlify.app/one", (resp) => {
@@ -22,7 +24,7 @@ exports.handler = async (event) => {
   });
 
   return {
-    statusCode: 302,
-    body: "hello",
+    statusCode: 200,
+    body: `Hello ${subject}!`,
   };
 };
