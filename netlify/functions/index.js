@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-
+require("./sites");
 const d = "./../";
 
 const read = function (dir) {
