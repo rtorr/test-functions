@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   const subject = event.queryStringParameters.name || "World";
   console.log("coooooooooool", sites);
   let res = "";
-  const site = sites[Math.floor(Math.random() * items.length)];
+  const site = sites[Math.floor(Math.random() * sites.length)];
   try {
     const req = await new Promise((resolve, reject) => {
       https
