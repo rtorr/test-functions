@@ -3,7 +3,7 @@ const https = require("https");
 exports.handler = async (event) => {
   const req = await new Promise((resolve, reject) => {
     https
-      .get("quirky-northcutt-01be8c.netlify.app/one", (resp) => {
+      .get("https://quirky-northcutt-01be8c.netlify.app/one", (resp) => {
         let data = "";
 
         // A chunk of data has been received.
